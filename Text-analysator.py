@@ -68,31 +68,23 @@ for slovo in text:
 for slovo in clean_text:
     if slovo == "":
         clean_text.remove(slovo)
-
 word_count = clean_text.index(clean_text[-1]) + 1
+
 title_case_count = 0
+upper_case_count = 0
+number_count = 0
+lower_case_count = 0
+number_sum = 0
+
 for slovo in clean_text:
     if slovo.istitle():
         title_case_count = title_case_count + 1
-
-upper_case_count = 0
-for slovo in clean_text:
-    if slovo.isupper():
+    elif slovo.isupper():
         upper_case_count = upper_case_count + 1
-
-lower_case_count = 0
-for slovo in clean_text:
-    if slovo.istitle():
+    elif slovo.islower():
         lower_case_count = lower_case_count + 1
-
-number_count = 0
-for slovo in clean_text:
-    if slovo.isnumeric():
+    elif slovo.isnumeric():
         number_count = number_count + 1
-
-number_sum = 0
-for slovo in clean_text:
-    if slovo.isnumeric():
         number_sum = number_sum + int(slovo)
 
 word_len = list()
